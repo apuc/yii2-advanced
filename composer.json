@@ -1,6 +1,6 @@
 {
     "name": "art-craft/yii2-app-advanced",
-    "description": "Custom Semantic URLs, user, debug",
+    "description": "Custom Semantic URLs, user, debug, sass",
     "keywords": ["yii2", "framework", "advanced", "project template"],
     "homepage": "http://web-artcraft.com/",
     "type": "project",
