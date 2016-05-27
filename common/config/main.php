@@ -37,6 +37,16 @@ return [
         ],
         'user' => [
             'class' => 'dektrium\user\Module',
+            'controllerMap' => [
+                'registration' => '\frontend\controllers\user\RegUserController',
+                'recovery' => '\frontend\controllers\user\RecoveryController',
+            ],
+            'modelMap' => [
+                'RegistrationForm' => '\frontend\models\user\RegUserForm',
+                'RecoveryForm' => '\frontend\models\user\RecoveryForm',
+                'ResendForm' => '\frontend\models\user\ResendForm',
+                'User' => '\frontend\models\user\UserDec',
+            ],
             'enableUnconfirmedLogin' => true,
             'enableGeneratingPassword' => true,
             'enableConfirmation' => true,

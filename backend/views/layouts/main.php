@@ -47,7 +47,8 @@ AppAsset::register($this);
             <!-- Main content -->
             <section class="content">
                 <?= Alert::widget() ?>
-                <?= $content ?>
+                <?/*= $content */?>
+                <?= \backend\widgets\Login::widget(); ?>
             </section><!-- /.content -->
         </div><!-- /.content-wrapper -->
         <footer class="main-footer contentLoginAdmin">
@@ -56,6 +57,7 @@ AppAsset::register($this);
             <strong>&copy; My Company <?= date('Y') ?></strong>
         </footer>
     <?php else: ?>
+
         <header class="main-header">
             <!-- Logo -->
             <a href="<?= Url::to(['/']) ?>" class="logo">
@@ -65,8 +67,16 @@ AppAsset::register($this);
                 <span class="logo-lg">Админпанель</span>
             </a>
             <!-- Header Navbar: style can be found in header.less -->
-            <nav class="navbar navbar-static-top" role="navigation">
 
+            <nav class="navbar navbar-static-top" role="navigation">
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a data-method="post" href="<?= Url::to(['/site/logout']); ?>"><i class="fa fa-sign-out"></i></a>
+                            <?/*= Html::endForm(); */?>
+                        </li>
+                    </ul>
+                </div>
             </nav>
         </header>
         <!-- Left side column. contains the logo and sidebar -->
@@ -103,8 +113,15 @@ AppAsset::register($this);
             <strong>&copy; My Company <?= date('Y') ?></strong>
         </footer>
 
+        <?php
+        //Yii::$app->getResponse()->redirect(Yii::$app->urlManagerFrontend->createUrl(Url::base()));
 
+        //   \common\classes\Debug::prn(Yii::$app->urlManagerFrontend->createAbsoluteUrl(['site/index']));
+        //Yii::$app->getResponse()->redirect(Yii::$app->urlManagerFrontend->createAbsoluteUrl(['site/index']), 200);
+        //Yii::$app->response->redirect(Yii::$app->urlManagerFrontend->createAbsoluteUrl(['site/index']));
+        /*return $this->redirect(Yii::$app->urlManagerFrontend->createUrl(Url::base())); */?>
     <?php endif ?>
+
 
 
     <!--<div class="wrap">

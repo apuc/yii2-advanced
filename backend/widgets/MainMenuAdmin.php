@@ -11,8 +11,11 @@ class MainMenuAdmin extends Widget
             [
                 'items' => [
                     [
-                        'label' => 'Ссылка 1',
-                        'url' => '#',
+                        'label' => 'Пользователи',
+                        'url' => Url::to(['/user/admin']),
+                        'template' => '<a href="{url}"><i class="fa fa-users"></i> <span>{label}</span></a>',
+                        'active' => Yii::$app->controller->module->id == 'user' || Yii::$app->controller->module->id == 'rbac',
+
                     ],
                     [
                         'label' => 'Ссылка 2',
