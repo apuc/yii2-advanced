@@ -5,7 +5,8 @@
 
 Для закрытия доступа к админпанели не админам в контролере использовать
 
-            'AccessSecure' =>
+
+              'AccessSecure' =>
                 [
                     'class' => AccessSecure::className(),
                     'rules' => [
